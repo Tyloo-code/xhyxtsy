@@ -1,7 +1,10 @@
 <template>
   <div class="header">
     <h3>《信号与系统》仿真实验平台</h3>
+ 
     <div class="user">
+      <span >系统时间：{{this.datetime}}</span> 
+      <span class="time">111</span> 
       <span class="username">
         <label> 用户： </label>
         <code> {{ userName }} </code>
@@ -20,8 +23,9 @@ import {setCookie} from '@/common/utils';
 export default {
     data() {
         return {
-            
-        };
+          timer: '',
+          datetime: ''
+        }
     },
     props: ['userName'],
     methods: {
@@ -32,8 +36,23 @@ export default {
             this.$emit('showHeader', false);
             window.location.href = '#/login';
         }
+    },
+       mounted() {
+      /* 每秒定时刷新 */
+      this.timer = setInterval(() => {
+        this.datetime = this.dayjs().format("YYYY-MM-DD HH:mm:ss")
+        // console.log(this.datetime)
+      }, 1000)
+    },
+    beforeDestroy() {
+      /* 离开页面前销毁定时器 */
+      if(this.timer){
+        clearInterval(this.timer);
+      }
     }
-};
+  }
+         
+
 </script>
 
 <style lang="scss" scoped>
@@ -62,6 +81,9 @@ export default {
     background-color: #6c757d;
     color: white;
     float: right;
+    .time{
+      color: rgba(0,0,0,0);
+    }
     .logout {
       display: inline-block;
       height: 24px;

@@ -6,16 +6,16 @@
       <el-table-column prop="campany_Name" label="学号" />
       <el-table-column prop="number" label="姓名" />
       <el-table-column prop="people" label="选课状态" />
-      <el-table-column fixed="right" label="功能列表" width="120">
+      <!-- <el-table-column fixed="right" label="功能列表" width="120">
         <template slot-scope="scope">
-          <!-- <el-button @click="handleChange" type="text" size="small">
+          <!- <el-button @click="handleChange" type="text" size="small">
             班级管理 -->
           <!-- </el-button> -->
-          <el-button @click="handleDelete(scope.row)" type="text" size="small"
+          <!-- <el-button @click="handleDelete(scope.row)" type="text" size="small"
             > 更改选课</el-button
           >
         </template>
-      </el-table-column>
+      </el-table-column> --> 
     </el-table>
     <el-pagination
       class="pagination"
@@ -116,7 +116,7 @@ const data = [
     campany_Name:"190703110",
     number: "张九",
     name: "北京林业大学",
-    people: "退选"
+    people: "已选"
   },
   {
     fleet_Num:"电气191",
@@ -148,23 +148,23 @@ export default {
     handlePush() {
       // 将修改好的信息上传至服务器
     },
-    handleDelete(data) {
+    // handleDelete(data) {
 
-      // this.$router.replace('/car'+data.id)
-      console.log(data.people)
-     this.$nextTick(() => {
-      if (data.people = '已选'){
-        data.people = '退选'
+    //   // this.$router.replace('/car'+data.id)
+    //   console.log(data.people)
+    //  this.$nextTick(() => {
+    //   if (data.people = '已选'){
+    //     data.people = '退选'
      
-      } else if(data.people = '退选'){
-        data.people = '已选'
-      }
-      })
+    //   } else if(data.people = '退选'){
+    //     data.people = '已选'
+    //   }
+    //   })
      
       
-      console.log(data)
+      // console.log(data)
       // 将信息上传至服务器进行删除
-    }
+    // }
   }
 };
 </script>

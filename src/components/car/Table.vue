@@ -89,14 +89,7 @@ const data = [
     name: "北京林业大学",
     people: "33"
   },
-   {
-     id:5,
-    fleet_Num:"信息学院",
-    campany_Name:"数字传媒",
-    number: "数媒193",
-    name: "北京林业大学",
-    people: "27"
-  },
+  
  
   /* {
     number: 4,
@@ -157,7 +150,7 @@ export default {
       // 将修改好的信息上传至服务器
     },
     handleDelete(data) {
-      this.$router.replace('/car'+data.id)
+      this.$router.push('/car'+data.id)
       console.log(data)
       // 将信息上传至服务器进行删除
     }

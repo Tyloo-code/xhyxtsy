@@ -30,9 +30,9 @@
         <el-form-item label="实验名称" :label-width="formLabelWidth">
           <el-input v-model="form.campany_Name" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="班级列表" :label-width="formLabelWidth">
-          <el-input v-model="form.number" autocomplete="off"></el-input>
-        </el-form-item>
+        <!-- <el-form-item label="班级列表" :label-width="formLabelWidth">
+          <el-input v-model="form.number" autocomplete="off"></el-input> -->
+        <!-- </el-form-item> -->
       </el-form>
       <div slot="footer">
         <el-button type="primary" @click="handleAdd">确 认</el-button>

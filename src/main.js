@@ -6,7 +6,11 @@ import "./registerServiceWorker";
 import router from "./router";
 import store from "./store";
 import axios from 'axios';
+import dayjs from "dayjs"
+Vue.prototype.dayjs = dayjs;
 Vue.prototype.$axios = axios;
+
+
 
 import moment from "moment";
 Vue.prototype.$moment = moment;

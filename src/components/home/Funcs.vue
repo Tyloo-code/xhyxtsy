@@ -1,28 +1,26 @@
 <template>
   <div>
     <el-button type="primary" icon="el-icon-folder-add" @click="handleAdd">
-      增加
+      生成用户
     </el-button>
-    <el-button type="primary">
+    <el-button type="primary" @click="userName">
       <el-upload
         class="upload-demo"
         action="https://jsonplaceholder.typicode.com/posts/"
         :multiple="multiple"
         :showFileList="multiple"
-        :on-success="handleSuccess"
-        :on-error="handleError"
         show-file-list="false"
         :limit="1"
         accept=".csv"
       >
         <i class="el-icon-upload2"></i>
-        上传
+        导入名单
       </el-upload>
     </el-button>
     <el-button type="primary" icon="el-icon-download" @click="handleDownload">
-      导出
+      批改打分
     </el-button>
-    <el-dialog title="新增实验信息" :visible.sync="addVisible" width="30%">
+    <!-- <el-dialog title="新增实验信息" :visible.sync="addVisible" width="30%">
       <el-form :model="form">
         <el-form-item label="课程名称" :label-width="formLabelWidth">
           <el-input v-model="form.fleet_Num" autocomplete="off" disabled></el-input>
@@ -37,7 +35,7 @@
       <div slot="footer">
         <el-button type="primary" @click="handleAdd">确 认</el-button>
       </div>
-    </el-dialog>
+    </el-dialog> -->
   </div>
 </template>
 
@@ -57,28 +55,39 @@ export default {
   },
   methods: {
     handleAdd() {
-      let myDate = new Date();
-      let myTime = this.$moment(myDate).format("YYYYMMDDHHmmss");
-      this.form.fleet_Num = myTime;
-      console.log(myTime);
-      this.addVisible = true;
+      this.$router.push('/teacher')
     },
-
-    handleSuccess() {
-      this.$message({
-        type: "success",
-        message: "文件上传成功"
-      });
-    },
-    handleError() {
-      this.$message({
-        type: "error",
-        message: "文件上传失败"
-      });
+    userName() {
+      this.$router.push('/uploadsName')
     },
     handleDownload() {
-      console.log("下载");
+      this.$router.push('/setting')
     }
+
+
+  //   handleAdd() {
+  //     let myDate = new Date();
+  //     let myTime = this.$moment(myDate).format("YYYYMMDDHHmmss");
+  //     this.form.fleet_Num = myTime;
+  //     console.log(myTime);
+  //     this.addVisible = true;
+  //   },
+
+  //   handleSuccess() {
+  //     this.$message({
+  //       type: "success",
+  //       message: "文件上传成功"
+  //     });
+  //   },
+  //   handleError() {
+  //     this.$message({
+  //       type: "error",
+  //       message: "文件上传失败"
+  //     });
+  //   },
+  //   handleDownload() {
+  //     console.log("下载");
+  //   }
   }
 };
 </script>

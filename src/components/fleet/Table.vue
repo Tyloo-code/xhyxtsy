@@ -4,15 +4,15 @@
       <el-table-column type="index" label="序号" width="80" />
       <el-table-column prop="fleet_Num" label="课程名称" />
       <el-table-column prop="campany_Name" label="实验名称" />
-      <el-table-column prop="number" label="班级列表" />
+      <!-- <el-table-column prop="number" label="班级列表" /> -->
       <el-table-column fixed="right" label="功能列表" width="120">
         <template slot-scope="scope">
           <el-button @click="handleChange(scope.row)" type="text" size="small">
-            编辑班级
+            选择班级
           </el-button>
-          <el-button @click="handleDelete(scope.row)" type="text" size="small"
+          <!-- <el-button @click="handleDelete(scope.row)" type="text" size="small"
             >删除</el-button
-          >
+          > -->
         </template>
       </el-table-column>
     </el-table>
@@ -31,9 +31,9 @@
         <el-form-item label="实验名称" :label-width="formLabelWidth">
           <el-input v-model="form.campany_Name" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="班级列表" :label-width="formLabelWidth">
+        <!-- <el-form-item label="班级列表" :label-width="formLabelWidth">
           <el-input v-model="form.number" autocomplete="off"></el-input>
-        </el-form-item>
+        </el-form-item> -->
       </el-form>
       <div slot="footer">
         <el-button type="primary" @click="handlePush">确 认</el-button>

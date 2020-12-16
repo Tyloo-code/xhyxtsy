@@ -12,7 +12,7 @@
             班级管理 -->
           <!-- </el-button> -->
           <el-button @click="handleDelete(scope.row)" type="text" size="small"
-            > 查看成绩</el-button
+            > 成绩打分 </el-button
           >
         </template>
       </el-table-column>
@@ -89,15 +89,7 @@ const data = [
     name: "北京林业大学",
     people: "33"
   },
-   {
-     id:5,
-    fleet_Num:"信息学院",
-    campany_Name:"数字传媒",
-    number: "数媒193",
-    name: "北京林业大学",
-    people: "27"
-  },
- 
+  
   /* {
     number: 4,
     name: "北京林业大学",
@@ -157,7 +149,7 @@ export default {
       // 将修改好的信息上传至服务器
     },
     handleDelete(data) {
-      this.$router.replace('/setting'+data.id)
+      this.$router.push('/setting'+data.id)
       console.log(data)
       // 将信息上传至服务器进行删除
     }

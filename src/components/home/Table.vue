@@ -137,7 +137,7 @@ export default {
       // 将修改好的信息上传至服务器
     },
     handleDelete(data) {
-      this.$router.replace('/about'+data.id)
+      this.$router.push('/about'+data.id)
       console.log(data.id)
       // 将信息上传至服务器进行删除
     },

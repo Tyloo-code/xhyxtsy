@@ -10,14 +10,14 @@
 
 <script>
 import Head from "@/components/Head.vue";
-import Nav from "@/components/Nav.vue";
+import Nav0 from "@/components/Nav0.vue";
 import {getCookie} from '@/common/utils';
 
 export default {
     name: 'App',
     components: {
         'sys-header': Head,
-        'sys-nav': Nav
+        'sys-nav': Nav0
     },
     data() {
         return {

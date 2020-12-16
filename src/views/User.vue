@@ -17,7 +17,7 @@
                 <el-table-column prop="userNum" label="用户编号" />
                 <el-table-column prop="password" label="用户密码">
                     <template slot-scope="scope">
-                        ***
+                        ***                      
                     </template>
                 </el-table-column>
                 <el-table-column prop="role" label="用户级别" />

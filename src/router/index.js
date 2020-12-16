@@ -125,6 +125,24 @@ const routes = [{
         meta: "Setting",
         component: () => import("@/views/Setting.vue")
     },
+    {
+      path: "/teacher",
+      name: "teacher",
+      meta: "Teacher",
+      component: () => import("@/views/Teacher.vue")
+    },
+    {
+      path: "/uploadsName",
+      name: "uploadsName",
+      meta: "UploadsName",
+      component: () => import("@/views/UploadsName.vue")
+    },
+    {
+      path: "/time",
+      name: "time",
+      meta: "Time",
+      component: () => import("@/views/Time.vue")
+    },
     
 ];
 

@@ -1,10 +1,12 @@
 <template>
   <div class="home">
     <!-- <p>我是主界面</p> -->
-    <!-- <el-button class="button" @click="goClick">编辑实验</el-button> -->
+    <!-- <el-button class="button" @click="goClick">编辑实验</el-button>
+    <el-button class="button" @click="goClick">编辑实验</el-button> -->
+    
     <div class="func-list">
       <Search class="left" />
-      <!-- <Funcs class="right" /> -->
+      <Funcs class="right" />
     </div>
     <Table />
   </div>
@@ -30,7 +32,7 @@ export default {
   },
   methods: {
     goClick() {
-      this.$router.replace('/about')
+      this.$router.push('/about')
     }
   }
 };
