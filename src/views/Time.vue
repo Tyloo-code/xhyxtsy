@@ -2,6 +2,7 @@
   <div id="Time">
     {{this.datetime}}
   </div>
+  
 </template>
 
 <script>
@@ -17,7 +18,7 @@ export default {
       /* 每秒定时刷新 */
       this.timer = setInterval(() => {
         this.datetime = this.dayjs().format("YYYY-MM-DD HH:mm:ss")
-        // console.log(this.datetime)
+        console.log(this.datetime)
       }, 1000)
     },
     beforeDestroy() {

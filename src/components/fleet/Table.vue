@@ -45,6 +45,7 @@
 <script>
 const data = [
   {
+    id:0,
     fleet_Num:"信号与系统",
     campany_Name:"信号的基本运算实验",
     number: "1班, 2班",
@@ -52,6 +53,7 @@ const data = [
     people: "谢辉平"
   },
   {
+    id:1,
     fleet_Num:"信号与系统",
     campany_Name:"方波信号的分解与合成实验",
     number: "2班, 3班",
@@ -60,6 +62,7 @@ const data = [
   },
 
   {
+    id:2,
     fleet_Num:"信号与系统",
     campany_Name:"信号的采样与恢复实验",
     number: "3班, 4班",
@@ -67,6 +70,7 @@ const data = [
     people: "谢辉平"
   },
    {
+    id:3,
     fleet_Num:"信号与系统",
     campany_Name:"有源无源滤波器实验",
     number: "1班, 4班",
@@ -124,9 +128,11 @@ export default {
   },
   methods: {
     handleChange(data) {
-      this.changeVisible = true;
-      this.form = data;
-      console.log(data);
+      // this.changeVisible = true;
+      // this.form = data;
+      // console.log(data);
+      this.$router.push('/car'+data.id)
+      console.log(data)
     },
     handlePush() {
       // 将修改好的信息上传至服务器

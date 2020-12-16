@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <div id="demo">
     <!-- <p>我是主界面</p> -->
     <!-- <el-button class="button" @click="goClick">编辑实验</el-button>
     <el-button class="button" @click="goClick">编辑实验</el-button> -->
@@ -9,7 +10,11 @@
       <Funcs class="right" />
     </div>
     <Table />
+    
+    <el-button class="button" type="primary" icon="el-icon-download" @click="download">下载报告</el-button>
+    </div>
   </div>
+  
 </template>
 
 
@@ -18,7 +23,7 @@
 import Search from "@/components/home/Search.vue";
 import Funcs from "@/components/home/Funcs.vue";
 import Table from "@/components/home/Table.vue";
-
+import htmlToPdf from "../common/htmlToPdf"
 export default {
   name: "Home",
   components: {
@@ -26,6 +31,7 @@ export default {
     Funcs,
     Table
   },
+  
   props: ['role'],
   mounted() {
     this.$emit('showHeader', true);
@@ -33,6 +39,12 @@ export default {
   methods: {
     goClick() {
       this.$router.push('/about')
+    },
+    handleExport() {
+      this.$getPdf('exportBox', this.realName)
+    },
+    download() {
+      htmlToPdf.downloadPDF(document.querySelector("#demo"),"home报告")
     }
   }
 };

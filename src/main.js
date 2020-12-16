@@ -7,10 +7,11 @@ import router from "./router";
 import store from "./store";
 import axios from 'axios';
 import dayjs from "dayjs"
+import htmlToPdf from "./common/htmlToPdf"
 Vue.prototype.dayjs = dayjs;
 Vue.prototype.$axios = axios;
 
-
+Vue.use(htmlToPdf)
 
 import moment from "moment";
 Vue.prototype.$moment = moment;

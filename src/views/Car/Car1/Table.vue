@@ -6,16 +6,15 @@
       <el-table-column prop="campany_Name" label="学号" />
       <el-table-column prop="number" label="姓名" />
       <!-- <el-table-column prop="people" label="选课状态" /> -->
-      <!-- <el-table-column fixed="right" label="功能列表" width="120">
-        <template slot-scope="scope"> -->
-          <!-- <el-button @click="handleChange" type="text" size="small">
-            班级管理 -->
-          <!-- </el-button> -->
+      <el-table-column fixed="right" label="功能列表" width="120">
+        <template slot-scope="scope">
+          <el-button @click="handleChange(scope.row)" type="text" size="small">
+            填写报告
+          </el-button>
           <!-- <el-button @click="handleDelete(scope.row)" type="text" size="small"
-            > 更改选课</el-button
-          >
+            > 更改选课</el-button >-->
         </template>
-      </el-table-column> -->
+      </el-table-column>
     </el-table>
     <el-pagination
       class="pagination"
@@ -116,14 +115,14 @@ const data = [
     campany_Name:"190703210",
     number: "张九",
     name: "北京林业大学",
-    people: "退选"
+    people: "已选"
   },
   {
     fleet_Num:"车辆192",
     campany_Name:"190703211",
     number: "张十",
     name: "北京林业大学",
-    people: "退选"
+    people: "已选"
   },
 ];
 export default {
