@@ -11,7 +11,7 @@
     </div>
     <Table />
     
-    <el-button class="button" type="primary" icon="el-icon-download" @click="download">下载报告</el-button>
+    <!-- <el-button class="button" type="primary" icon="el-icon-download" @click="download">下载报告</el-button> -->
     </div>
   </div>
   

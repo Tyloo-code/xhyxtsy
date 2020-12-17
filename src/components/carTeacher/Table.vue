@@ -2,17 +2,18 @@
   <div>
     <el-table :data="tableData" border>
       <el-table-column type="index" label="序号" width="80" />
-      <el-table-column prop="fleet_Num" label="班级名称" />
-      <el-table-column prop="campany_Name" label="学号" />
-      <el-table-column prop="number" label="姓名" />
-      <!-- <el-table-column prop="people" label="选课状态" /> -->
+      <el-table-column prop="fleet_Num" label="学院名称" />
+      <el-table-column prop="campany_Name" label="专业名称" />
+      <el-table-column prop="number" label="班级名称" />
+      <el-table-column prop="people" label="选课人数" />
       <el-table-column fixed="right" label="功能列表" width="120">
         <template slot-scope="scope">
-          <el-button @click="handleChange(scope.row)" type="text" size="small">
-            填写报告
-        </el-button>
-          <!-- <el-button @click="handleDelete(scope.row)" type="text" size="small"
-            > 更改选课</el-button>-->
+          <!-- <el-button @click="handleChange" type="text" size="small">
+            班级管理 -->
+          <!-- </el-button> -->
+          <el-button @click="handleDelete(scope.row)" type="text" size="small"
+            > 班级管理</el-button
+          >
         </template>
       </el-table-column>
     </el-table>
@@ -48,82 +49,83 @@
 <script>
 const data = [
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703101",
-    number: "张三",
+    id:0,
+    fleet_Num:"工学院",
+    campany_Name:"电气工程自动化",
+    number: "电气191",
     name: "北京林业大学",
-    people: "已选"
+    people: "35"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703102",
-    number: "李四",
+    id:1,
+    fleet_Num:"工学院",
+    campany_Name:"车辆工程自动化",
+    number: "车辆192",
     name: "北京林业大学",
-    people: "已选"
+    people: "39"
+  },
+
+  {
+    id:2,
+    fleet_Num:"工学院",
+    campany_Name:"机械工程自动化",
+    number: "机械194",
+    name: "北京林业大学",
+    people: "40"
+  },
+   {
+    id:3,
+    fleet_Num:"工学院",
+    campany_Name:"自动化",
+    number: "自动化191",
+    name: "北京林业大学",
+    people: "31"
+  },
+   {
+     id:4,
+    fleet_Num:"工学院",
+    campany_Name:"自动化",
+    number: "自动化192",
+    name: "北京林业大学",
+    people: "33"
+  },
+  
+ 
+  /* {
+    number: 4,
+    name: "北京林业大学",
+    people: "谢辉平"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703103",
-    number: "王五",
+    number: 5,
     name: "北京林业大学",
-    people: "已选"
+    people: "谢辉平"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703104",
-    number: "赵六",
+    number: 6,
     name: "北京林业大学",
-    people: "已选"
+    people: "谢辉平"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703105",
-    number: "张四",
+    number: 7,
     name: "北京林业大学",
-    people: "已选"
+    people: "谢辉平"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703106",
-    number: "张五",
+    number: 8,
     name: "北京林业大学",
-    people: "已选"
+    people: "谢辉平"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703107",
-    number: "张六",
+    number: 9,
     name: "北京林业大学",
-    people: "已选"
+    people: "谢辉平"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703108",
-    number: "张七",
+    number: 10,
     name: "北京林业大学",
-    people: "已选"
-  },
-  {
-    fleet_Num:"电气191",
-    campany_Name:"190703109",
-    number: "张八",
-    name: "北京林业大学",
-    people: "已选"
-  },
-  {
-    fleet_Num:"电气191",
-    campany_Name:"190703110",
-    number: "张九",
-    name: "北京林业大学",
-    people: "已选"
-  },
-  {
-    fleet_Num:"电气191",
-    campany_Name:"190703111",
-    number: "张十",
-    name: "北京林业大学",
-    people: "已选"
-  },
+    people: "谢辉平"
+  } */
 ];
 export default {
   data() {
@@ -140,31 +142,18 @@ export default {
   },
   methods: {
     handleChange(data) {
-      // this.changeVisible = true;
-      // this.form = data;
-      // console.log(data);
-       this.$router.push('/baogao0')
+      this.changeVisible = true;
+      this.form = data;
+      console.log(data);
     },
     handlePush() {
       // 将修改好的信息上传至服务器
     },
-    // handleDelete(data) {
-
-    //   // this.$router.replace('/car'+data.id)
-    //   console.log(data.people)
-    //  this.$nextTick(() => {
-    //   if (data.people = '已选'){
-    //     data.people = '退选'
-     
-    //   } else if(data.people = '退选'){
-    //     data.people = '已选'
-    //   }
-    //   })
-     
-      
-      // console.log(data)
+    handleDelete(data) {
+      this.$router.push('/carteacher'+data.id)
+      console.log(data)
       // 将信息上传至服务器进行删除
-    // }
+    }
   }
 };
 </script>

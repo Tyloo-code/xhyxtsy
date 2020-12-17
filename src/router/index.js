@@ -62,6 +62,12 @@ const routes = [{
         component: () => import("@/views/Car.vue")
     },
     {
+      path: "/carteacher",
+      name: "carteacher",
+      meta: "CarTeacher",
+      component: () => import("@/views/CarTeacher.vue")
+  },
+    {
       path: "/car0",
       component: () => import("@/views/Car/Car0/Car0.vue")
     },
@@ -80,6 +86,26 @@ const routes = [{
     {
       path: "/car4",
       component: () => import("@/views/Car/Car4/Car4.vue")
+    },
+    {
+      path: "/carteacher0",
+      component: () => import("@/views/CarTeacher/Car0/Car0.vue")
+    },
+    {
+      path: "/carteacher1",
+      component: () => import("@/views/CarTeacher/Car1/Car1.vue")
+    },
+    {
+      path: "/carteacher2",
+      component: () => import("@/views/CarTeacher/Car2/Car2.vue")
+    },
+    {
+      path: "/carteacher3",
+      component: () => import("@/views/CarTeacher/Car3/Car3.vue")
+    },
+    {
+      path: "/carteacher4",
+      component: () => import("@/views/CarTeacher/Car4/Car4.vue")
     },
     {
       path: "/setting0",
@@ -142,6 +168,12 @@ const routes = [{
       name: "time",
       meta: "Time",
       component: () => import("@/views/Time.vue")
+    },
+    {
+      path: "/baogao0",
+      name: "baogao0",
+      meta: "Baogao0",
+      component: () => import("@/views/Baogao0.vue")
     },
     
 ];

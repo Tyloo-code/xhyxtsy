@@ -9,10 +9,10 @@
       <el-table-column fixed="right" label="功能列表" width="120">
         <template slot-scope="scope">
           <el-button @click="handleChange(scope.row)" type="text" size="small">
-            填写报告
-        </el-button>
+            修改状态
+          </el-button>
           <!-- <el-button @click="handleDelete(scope.row)" type="text" size="small"
-            > 更改选课</el-button>-->
+            > 更改选课</el-button >-->
         </template>
       </el-table-column>
     </el-table>
@@ -48,78 +48,78 @@
 <script>
 const data = [
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703101",
+    fleet_Num:"车辆192",
+    campany_Name:"190703201",
     number: "张三",
     name: "北京林业大学",
     people: "已选"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703102",
+    fleet_Num:"车辆192",
+    campany_Name:"190703202",
     number: "李四",
     name: "北京林业大学",
     people: "已选"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703103",
+    fleet_Num:"车辆192",
+    campany_Name:"190703203",
     number: "王五",
     name: "北京林业大学",
     people: "已选"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703104",
+    fleet_Num:"车辆192",
+    campany_Name:"190703204",
     number: "赵六",
     name: "北京林业大学",
     people: "已选"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703105",
+    fleet_Num:"车辆192",
+    campany_Name:"190703205",
     number: "张四",
     name: "北京林业大学",
     people: "已选"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703106",
+    fleet_Num:"车辆192",
+    campany_Name:"190703206",
     number: "张五",
     name: "北京林业大学",
     people: "已选"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703107",
+    fleet_Num:"车辆192",
+    campany_Name:"190703207",
     number: "张六",
     name: "北京林业大学",
     people: "已选"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703108",
+    fleet_Num:"车辆192",
+    campany_Name:"190703208",
     number: "张七",
     name: "北京林业大学",
     people: "已选"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703109",
+    fleet_Num:"车辆192",
+    campany_Name:"190703209",
     number: "张八",
     name: "北京林业大学",
     people: "已选"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703110",
+    fleet_Num:"车辆192",
+    campany_Name:"190703210",
     number: "张九",
     name: "北京林业大学",
     people: "已选"
   },
   {
-    fleet_Num:"电气191",
-    campany_Name:"190703111",
+    fleet_Num:"车辆192",
+    campany_Name:"190703211",
     number: "张十",
     name: "北京林业大学",
     people: "已选"
@@ -140,31 +140,18 @@ export default {
   },
   methods: {
     handleChange(data) {
-      // this.changeVisible = true;
-      // this.form = data;
-      // console.log(data);
-       this.$router.push('/baogao0')
+      this.changeVisible = true;
+      this.form = data;
+      console.log(data);
     },
     handlePush() {
       // 将修改好的信息上传至服务器
     },
-    // handleDelete(data) {
-
-    //   // this.$router.replace('/car'+data.id)
-    //   console.log(data.people)
-    //  this.$nextTick(() => {
-    //   if (data.people = '已选'){
-    //     data.people = '退选'
-     
-    //   } else if(data.people = '退选'){
-    //     data.people = '已选'
-    //   }
-    //   })
-     
-      
-      // console.log(data)
+    handleDelete(data) {
+      // this.$router.replace('/car'+data.id)
+      console.log(data)
       // 将信息上传至服务器进行删除
-    // }
+    }
   }
 };
 </script>

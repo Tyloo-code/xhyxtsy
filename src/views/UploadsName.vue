@@ -48,7 +48,7 @@
         },
         methods:{
             name() {
-              this.$router.push('/car')
+              this.$router.push('/carteacher')
             },
             show(file){
                 console.log(file);

@@ -1,7 +1,10 @@
 <template>
   <div class="home">
+    <div id="demo">
     <!-- <p>我是主界面</p> -->
-       <el-button class="button">编辑实验</el-button>
+    <el-button class="button" type="primary" icon="el-icon-download" @click="download">下载报告</el-button>
+    
+    <el-button class="button1">编辑实验</el-button>
     <div>
       <center class="title" >实验1 信号的基本运算实验</center>
     <br>
@@ -94,13 +97,16 @@
 
 
     </div>
+    
+    </div>
+    
   </div>
 </template>
 
 
 <script>
 // @ is an alias to /src
-
+import htmlToPdf from "@/common/htmlToPdf"
 export default {
   name: "About0",
   components: {
@@ -109,6 +115,11 @@ export default {
   mounted() {
     this.$emit('showHeader', true);
   },
+  methods: {
+    download() {
+      htmlToPdf.downloadPDF(document.querySelector("#demo"),"about0报告")
+    }
+  }
 };
 </script>
 
@@ -150,4 +161,9 @@ export default {
     color: #fff;
     background-color: #409eff;
     }
+  .button1{
+    float: left;
+    color: #fff;
+    background-color: #409eff;
+  }
 </style>

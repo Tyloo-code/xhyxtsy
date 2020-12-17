@@ -9,7 +9,7 @@
       <el-table-column fixed="right" label="功能列表" width="120">
         <template slot-scope="scope">
           <el-button @click="handleChange(scope.row)" type="text" size="small">
-            填写报告
+            修改状态
         </el-button>
           <!-- <el-button @click="handleDelete(scope.row)" type="text" size="small"
             > 更改选课</el-button>-->
